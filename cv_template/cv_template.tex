@@ -1,0 +1,180 @@
+%====================
+% CV in Latex
+% Author : Matthew Woody
+% https://github.com/matthewwoody/CV-template
+%====================
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[margin=0.8in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage{xparse}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\tabcolsep}{0pt}
+\renewcommand{\arraystretch}{1.0}
+
+% Section formatting
+\titleformat{\section}
+  {\large\bfseries\uppercase}
+  {}
+  {0pt}
+  {}
+  % Optional horizontal bar after section name
+  [\vspace{-0.5em}\hrulefill\vspace{-0.85em}]
+
+% Lists
+\setlist[itemize]{
+  leftmargin=1.2em,
+  itemsep=0.2em,
+  topsep=0.25em,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+
+\NewDocumentCommand{\resumeSubheading}{m m o o}{%
+  \begin{tabularx}{\textwidth}{@{}X>{\RaggedLeft\arraybackslash}p{0.28\textwidth}@{}}
+    \textbf{#1} & #2 \\
+    \IfValueTF{#3}{%
+      \IfValueTF{#4}{%
+        #3 & #4 \\
+      }{%
+        #3 & \\
+      }%
+    }{%
+      \IfValueTF{#4}{%
+        & #4 \\
+      }{}%
+    }%
+  \end{tabularx}\vspace{0.25em}
+}
+
+\newcommand{\resumeSimpleHeading}[2]{%
+  \begin{tabularx}{\textwidth}{@{}X>{\RaggedLeft\arraybackslash}p{0.28\textwidth}@{}}
+    #1 & #2 \\
+  \end{tabularx}
+}
+
+\newcommand{\resumeItem}[1]{\item #1}
+\newcommand{\resumeText}[1]{#1\par}
+
+
+\begin{document}
+%====================
+% Header
+%====================
+\begin{center}
+  \textbf{\LARGE Your Name}\\[0.35em]
+  \href{https://yourwebsite.github.io/}{\underline{yourwebsite.github.io}} \textbullet{} \href{mailto:youremail@school.edu}{\underline{youremail@schoool.edu}} \textbullet{} \href{https://linkedin.com/in/yourprofile}{\underline{linkedin.com/yourprofile}}
+\end{center}
+
+%====================
+\section*{Education}
+%====================
+\resumeSubheading
+  {University Name}
+  {Expected Month 20XX}
+  [B.X. Degree Name \textbar{} GPA: X.XX / 4.00]
+  [City, ST]
+
+\vspace{-1.5em}
+%====================
+\section*{Research Experience}
+%====================
+\resumeSubheading
+  {Institution or Laboratory Name}
+  {Month 20XX -- Month 20XX}
+  [Research Role]
+  [City, ST]
+\textit{Advisors: Drs. Blah-Blah A, Blah-Blah B}
+\begin{itemize}
+  \resumeItem{Describe a research experience using action verbs and concrete technical details.}
+  \resumeItem{Add one bullet on collaboration, analysis pipeline, lab workflow or software/experimental techniques.}
+\end{itemize}
+
+\vspace{0.5em}
+\resumeSubheading
+  {Institution or Laboratory Name}
+  {Month 20XX -- Month 20XX}
+  [Research Role]
+  [City, ST]
+\textit{Advisor: Dr. So-and-So}
+\begin{itemize}
+  \resumeItem{Describe a second research experience using action verbs and concrete technical details.}
+  \resumeItem{Add one bullet on collaboration, analysis pipeline, lab workflow or software/experimental techniques.}
+\end{itemize}
+
+\vspace{-1em}
+%====================
+\section*{Honors and Grants}
+%====================
+\resumeSimpleHeading{Honor or Scholarship Name, Institution or Program}{20XX -- Present}
+\resumeSimpleHeading{Research Award or Medal}{20XX}
+\resumeSimpleHeading{Summer Research Funding Grant}{20XX}
+
+\vspace{-1.5em}
+%====================
+\section*{Presentations}
+%====================
+\resumeText{\textbf{Conference or Symposium Name}, City, ST, Month 20XX. LastName, M. ``Presentation or Poster Title'' (lecture/poster).}
+\resumeText{\textbf{Research Symposium Name}, Institution, City, ST, Month 20XX. LastName, M.; Coauthor, A.; Coauthor, B. ``Presentation or Poster Title'' (poster).}
+\resumeText{\textbf{Program Poster Session}, City, ST, Month 20XX. YourLastName, M. ``Presentation or Poster Title'' (poster).}
+
+%====================
+\section*{Other Experience}
+%====================
+\resumeSubheading
+  {Company or Club Name}
+  {Month 20XX -- Present}
+  [Job Title / Officer Role]
+  [City, ST]
+\begin{itemize}
+  \resumeItem{Did so-and-so (or not)}
+\end{itemize}
+
+\resumeSubheading
+  {Company or Club Name}
+  {Month 20XX -- Present}
+  [Job Title / Officer Role]
+  [City, ST]
+\begin{itemize}
+  \resumeItem{Did so-and-so (or not)}
+\end{itemize}
+
+
+%====================
+\section*{Professional Organizations}
+%====================
+\resumeText{Professional Society (20XX -- Present)}
+
+
+%====================
+\section*{Technical Skills}
+%====================
+ \begin{itemize}[leftmargin=0in, label={}]
+    \item[]{
+     \textbf{Languages: }{Language A, Language B, Language C} \\
+     \textbf{Libraries: }{Library A, Library B, Library C} \\
+     \textbf{Tools: }{Tool A, Tool B, Tool C} \\
+     \textbf{Relevant Coursework: }{Course 1, Course 2, Course 3, Course 4, Course 5}
+    }
+ \end{itemize}
+
+\end{document}
